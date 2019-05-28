@@ -6,8 +6,7 @@
 #include "PropertyFlags.h"
 #include "FunctionFlags.h"
 #include "../IGenerator.h"
-#include "../MainEngineClasses.h"
-#include "Utils.h"
+#include "EngineClasses.h"
 
 class UEClass;
 

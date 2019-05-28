@@ -1,8 +1,8 @@
 #include "pch.h"
-#include "Utils.h"
 #include "Memory.h"
-#include "../MainEngineClasses.h"
 #include "ObjectsStore.h"
+#include "EngineClasses.h"
+#include "Utils.h"
 #include <cassert>
 
 std::vector<std::unique_ptr<UEObject>> ObjectsStore::gObjObjects;

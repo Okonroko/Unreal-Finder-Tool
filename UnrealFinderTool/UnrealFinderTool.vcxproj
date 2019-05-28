@@ -194,7 +194,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scanner.h" />
     <ClInclude Include="SdkGenerator.h" />
-    <ClInclude Include="SdkGen\MainEngineClasses.h" />
+    <ClInclude Include="SdkGen\EngineClasses.h" />
     <ClInclude Include="SdkGen\Engine\cpplinq.hpp" />
     <ClInclude Include="SdkGen\Engine\IGenerator.h" />
     <ClInclude Include="SdkGen\Engine\Logger.h" />
@@ -248,7 +248,6 @@
     <ClCompile Include="SdkGen\Engine\UE4\PackageCore.cpp" />
     <ClCompile Include="SdkGen\Engine\UE4\PropertyFlags.cpp" />
     <ClCompile Include="SdkGen\MainGenerator.cpp" />
-    <ClCompile Include="SdkGen\MainGenericTypes.cpp" />
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="UiWindow.cpp" />
     <ClCompile Include="UnrealFinderTool.cpp" />
