@@ -150,6 +150,7 @@ void StartSdkGenerator()
 		g_objects_find_disabled = false;
 		g_names_find_disabled = false;
 		EnabledAll();
+		sg_finished = true;
 	});
 	t.detach();
 }
@@ -366,7 +367,7 @@ void MainUi(UiWindow& thiz)
 				ui::ListBox("##Packages_listbox", &sg_packages_item_current, VectorGetter, static_cast<void*>(&sg_packages_items), static_cast<int>(sg_packages_items.size()), 5);
 				ui::PopItemWidth();
 
-				// Start Logger
+				// Start Generator
 				ENABLE_DISABLE_WIDGET_IF(ui::Button("Start##SdkGenerator", { 370.0f, 0.0f }), sg_start_disabled,
 				{
 					if (IsReadyToGo())
@@ -374,6 +375,24 @@ void MainUi(UiWindow& thiz)
 					else
 						ui::OpenPopup("Warning##NotValidProcess");
 				});
+
+				if (sg_finished)
+				{
+					ui::OpenPopup("Warning##SdkFinish");
+					if (ui::BeginPopupModal("Warning##SdkFinish", nullptr, ImGuiWindowFlags_AlwaysAutoResize))
+					{
+						ui::Text("Sdk Generator finished. !!");
+						ui::Separator();
+
+						if (ui::Button("Ok", ImVec2(200, 0)))
+						{
+							sg_finished = false;
+							ui::CloseCurrentPopup();
+						}
+						ui::SetItemDefaultFocus();
+						ui::EndPopup();
+					}
+				}
 
 				NotValidProcessPopup();
 				ui::EndTabItem();
