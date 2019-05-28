@@ -5,7 +5,7 @@
 
 #include "PropertyFlags.h"
 #include "FunctionFlags.h"
-#include "../IGenerator.h"
+#include "IGenerator.h"
 #include "EngineClasses.h"
 
 class UEClass;
@@ -56,7 +56,6 @@ public:
 	template<typename Base>
 	Base Cast() const
 	{
-		// TODO: maybe i need to cast `Object` too
 		return Base(Object);
 	}
 
