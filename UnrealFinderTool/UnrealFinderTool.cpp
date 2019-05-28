@@ -141,7 +141,10 @@ void StartSdkGenerator()
 		GeneratorState ret = sg.Start(&sg_objects_count, &sg_names_count, &sg_packages_count, &sg_packages_done_count, sg_state, sg_packages_items);
 
 		if (ret == GeneratorState::Good)
+		{
+			sg_finished = true;
 			sg_state = "Finished.!!";
+		}
 		else if (ret == GeneratorState::BadGObject)
 			sg_state = "Wrong (GObjects) Address.!!";
 		else if (ret == GeneratorState::BadGName)
@@ -150,7 +153,6 @@ void StartSdkGenerator()
 		g_objects_find_disabled = false;
 		g_names_find_disabled = false;
 		EnabledAll();
-		sg_finished = true;
 	});
 	t.detach();
 }
